@@ -9,7 +9,6 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 @EnableWebMvc
 @Configuration
-@Import(SpringConfig.class)
 @ComponentScan(basePackages = "cn.monch.controller")
 public class MVCConfig implements WebMvcConfigurer
 {

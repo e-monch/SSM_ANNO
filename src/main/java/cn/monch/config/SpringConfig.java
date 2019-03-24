@@ -18,13 +18,13 @@ public class SpringConfig
     private String driver;
 
     @Value("${jdbc.url}")
-    private String url;
+    private String url = "jdbc:mysql:///travel";
 
     @Value("${jdbc.username}")
-    private String username;
+    private String username = "monch";
 
     @Value("${jdbc.password}")
-    private String password;
+    private String password = "monch";
 
     @Bean   //配置数据源
     public DataSource getDataSource()

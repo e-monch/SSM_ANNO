@@ -14,16 +14,16 @@ import java.util.EnumSet;
 //配置 dispatcherServlet
 public class SpringWeb extends AbstractAnnotationConfigDispatcherServletInitializer
 {
-    @Override   //指定 mvc 配置类
+    @Override   //指定 spring 配置类, 创建根容器
     protected Class<?>[] getRootConfigClasses()
     {
-        return new Class[]{MVCConfig.class};
+        return new Class[]{SpringConfig.class};
     }
 
-    @Override   //指定 spring 配置类
+    @Override   //指定 webmvc 配置类, 创建子容器
     protected Class<?>[] getServletConfigClasses()
     {
-        return new Class[]{SpringConfig.class};
+        return new Class[]{MVCConfig.class};
     }
 
     @Override   //指定 servlet 拦截请求路径
