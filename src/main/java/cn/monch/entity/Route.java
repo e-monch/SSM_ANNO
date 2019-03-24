@@ -1,7 +1,10 @@
 package cn.monch.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 public class Route implements Serializable
 {
     private Integer id;

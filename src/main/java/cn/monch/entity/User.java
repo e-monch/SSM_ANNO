@@ -1,9 +1,12 @@
 package cn.monch.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+@JsonIgnoreProperties(value = { "hibernateLazyInitializer", "handler" })
 public class User implements Serializable
 {
     private Integer id;

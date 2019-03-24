@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.sql.DataSource;
 
@@ -16,23 +15,21 @@ import javax.sql.DataSource;
 public class SpringConfig
 {
     @Value("${jdbc.driver}")
-    private String driver = "com.mysql.jdbc.Driver";
+    private String driver;
 
     @Value("${jdbc.url}")
-    private String url = "jdbc:mysql://localhost:3306/travel";
+    private String url;
 
     @Value("${jdbc.username}")
-    private String username = "monch";
+    private String username;
 
     @Value("${jdbc.password}")
-    private String password = "monch";
+    private String password;
 
     @Bean   //配置数据源
     public DataSource getDataSource()
     {
-        DriverManagerDataSource dataSource = new DriverManagerDataSource(url, username, password);
-        dataSource.setDriverClassName(driver);
-        return dataSource;
+        return new DriverManagerDataSource(url, username, password);
     }
 
     @Bean   //配置 SqlSession 工厂

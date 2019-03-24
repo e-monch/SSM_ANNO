@@ -16,7 +16,7 @@ public class UserController
     private UserService userService;
 
     @ResponseBody
-    @GetMapping(value = "/findAll", produces = "text/html;charset=UTF-8")
+    @GetMapping(value = "/findAll")
     public List<User> getAll()
     {
         List<User> all = userService.findAll();
